@@ -28,6 +28,10 @@ const UserSchema = new mongoose.Schema({
         type: String,
         default: ""
     },
+    appliedcom:{
+        type:[String],
+        default:[]
+    },
     curr_location: {
         type: String,
         default: ""
@@ -35,6 +39,10 @@ const UserSchema = new mongoose.Schema({
     profile_pic: {
         type: String,
         default:"./assets/profilepic.png"
+    },
+    coverpic: {
+        type: String,
+        default: "./assets/profilepic.png"
     },
     about: {
         type: String,

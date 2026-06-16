@@ -129,6 +129,26 @@ exports.updateUser = async (req, res) => {
         res.status(500).json({ error: "Server Error", message: err.message })
     }
 }
+exports.appliedcom = async (req, res) => {
+    try {
+        const {details} = req.body
+        const isExist = await User.findById(req.details._id)
+        if (!isExist) {
+            return res.status(400).json({ error: "User Dosent Exist" })
+        }
+        const updatedata = await User.findByIdAndUpdate(isExist._id, user)
+        
+
+        const updateduser = await User.findById(req.user._id)
+        res.status(200).json({
+            message: 'Updated Succesfully',
+            data: updateduser
+        })
+
+    } catch (err) {
+        res.status(500).json({ error: "Server Error", message: err.message })
+    }
+}
 
 
 exports.getprofilebyid= async(req,res)=>{
@@ -146,4 +166,17 @@ exports.getprofilebyid= async(req,res)=>{
 
 exports.logout=async(req,res)=>{
     res.clearCookie("token" , cookieOption).json({message:"logged Out Successfully"})
+}
+
+exports.coverpic = async(req , res)=>{
+    try{
+        const {newimg , user} = req.body
+        
+        const isExist = await User.findByIdAndUpdate(user._id , {coverpic : newimg}, {new :true})
+        console.log(isExist)
+        res.status(201).json({isExist})
+    }
+    catch(err){
+        res.status(500).json({error:"Server error", message:err.message})
+    }
 }

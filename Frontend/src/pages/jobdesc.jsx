@@ -10,12 +10,19 @@ const Jobdesc = () => {
 
     axios.get(`http://localhost:4000/api/post/jobs/${id}`,{withCredentials:true}).then((res)=>{
         setDetails(res.data.data)
-        // console.log(res.data.data)
     }).catch(err=>{
         console.log(err)
     })
     
 },[])
+console.log(details)
+
+const handleclick = async()=>{
+    axios.put("http://localhost:4000/api/auth/applied",details,{withCredentials:true}).then((res)=>{
+        console.log(res)
+        console.log("job applied successfully")
+    })
+}
 
 // console.log(details)
 
@@ -30,7 +37,7 @@ const Jobdesc = () => {
                 </div>
             </div>
             </div>
-            <div className="border-2 h-13 w-50 bg-blue-500 rounded-[4px] text-white text-center pt-3 active:bg-blue-600 hover:cursor-pointer active:scale-102 transition"> Apply Now</div>
+            <div className="border-2 h-13 w-50 bg-blue-500 rounded-[4px] text-white text-center pt-3 active:bg-blue-600 hover:cursor-pointer active:scale-102 transition" onClick={handleclick}> Apply Now</div>
         </div>
     <div className='main min-h-screen  flex bg-white px-40 pb-5'> 
     <div className='left border-2 w-[65%] text-2xl font-medium'>Job Description

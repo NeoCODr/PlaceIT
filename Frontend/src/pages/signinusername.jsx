@@ -1,4 +1,4 @@
-import { GoogleLogin } from '@react-oauth/google'
+import Googlelogin from '../components/google Login/googlelogin'
 import React, { useState } from 'react'
 import { Link, replace, useNavigate } from 'react-router-dom'
 import grey_bg from '../assets/bggrey.png'
@@ -44,7 +44,7 @@ const SignInuser = () => {
           
           <div className='relative flex flex-col bottom-0 gap-1 items-center'>
             <div className=' active:scale-103 transition text-[15px]'><button className='border-2 rounded-4xl border-gray-600 pl-4 w-70 py-2 cursor-pointer' onClick={handlesignin}>Sign in</button></div>
-            <div className=' active:scale-103 transition'><button className='border-2 rounded-4xl border-gray-600'><GoogleLogin size="large"  shape="pill" text="signin_with" width="280"/></button></div>
+            <div className=' active:scale-103 transition'><button className='border-2 rounded-4xl border-gray-600'><Googlelogin size="large"  shape="pill" text="signin_with" width="280"/></button></div>
             <div>Dont have an account? <a href={'/signup'} className=' text-blue-700 hover:underline'>Sign up</a></div>
             </div>
             </div>

@@ -28,17 +28,7 @@ function App() {
     setisLogin(val)
   }
 
-  // const fetchdata = async()=>{
-  //   await axios.post('http://localhost:4000/api/auth/login',{f_name : "" , password: ""}).then((res)=>{
-  //     console.log(res)
-  //   }).catch(err=>{
-  //     console.log(err)
-  //   })
-  // }
 
-  // useEffect(() => {
-  //   fetchdata()
-  // }, [])
 
 
 
