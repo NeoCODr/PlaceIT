@@ -4,7 +4,7 @@ import { useEffect ,useState } from 'react'
 
 const Imagemodal = (props) => {
   const [img , setimg] = useState(props.Data.profile_pic)
-  // console.log(img)
+  console.log(img)
   const change = async () => {
     try{
        
