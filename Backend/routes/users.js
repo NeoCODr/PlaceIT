@@ -11,11 +11,11 @@ route.put('/update', authentication.auth , usercontroller.updateUser)
 route.put('/applied', authentication.auth , usercontroller.appliedcom)
 route.put('/profile/:id', usercontroller.getprofilebyid)
 route.post('/logout', authentication.auth,usercontroller.logout)
-route.post('/coverpic', usercontroller.coverpic)
+route.post('/coverpic', usercontroller.coverpic) //cover picture
 
 route.get('/self', authentication.auth, (req , res) =>{
     return res.status(200).json({
-        user: req.user
+        user: req.user    
     })
 }) 
 
